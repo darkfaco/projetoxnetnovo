@@ -15,7 +15,7 @@ ID_disci IDENTITY(1,1)
 CREATE TABLE Disciplina (
 ID IDENTITY(1,1) PRIMARY KEY,
 nome varchar(100) not null,
-descrição varchar(200) not null,
+descricao varchar(200) not null,
 CPF_prof varchar (14) not null
 )
 
