@@ -4,35 +4,35 @@
 
 
 CREATE TABLE Pergunta (
-ID IDENTITY PRIMARY KEY,
-Pergunta varchar,
-Resposta varchar,
-tipo varchar,
-alternativa varchar,
-ID_disci IDENTITY
+ID IDENTITY(1,1) PRIMARY KEY,
+Pergunta varchar(1000) not null,
+Resposta varchar(1000) not null,
+tipo varchar(20) not null,
+alternativa varchar (5) not null,
+ID_disci IDENTITY(1,1)
 )
 
 CREATE TABLE Disciplina (
-ID IDENTITY PRIMARY KEY,
-nome varchar,
-descrição varchar,
-CPF_prof varchar
+ID IDENTITY(1,1) PRIMARY KEY,
+nome varchar(100) not null,
+descrição varchar(200) not null,
+CPF_prof varchar (14) not null
 )
 
 CREATE TABLE Professor (
-Nome varchar,
-SobreNome varchar,
-Email varchar,
-DatadeNascimento date,
-RG varchar,
-CPF varchar PRIMARY KEY,
-login varchar,
-senha varchar
+Nome varchar(100) not null,
+SobreNome varchar(100) not null,
+Email varchar(50) not null,
+DatadeNascimento date not null,
+RG varchar(10) not null,
+CPF varchar(14) PRIMARY KEY,
+login varchar(60) not null,
+senha varchar(60) not null
 )
 
-CREATE TABLE Logar sistema (
-login varchar,
-senha varchar
+CREATE TABLE administrador (
+login varchar(60) not null,
+senha varchar(60) not null
 )
 
 ALTER TABLE Pergunta ADD FOREIGN KEY(ID_disci) REFERENCES Disciplina (ID)
